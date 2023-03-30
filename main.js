@@ -44,8 +44,7 @@ setInterval(async () => {
     const detections = await faceapi
     .detectSingleFace(video, new faceapi.TinyFaceDetectorOptions())
     .withFaceLandmarks()
-    .withFaceExpressions()
-    .withAgeAndGender();
+    .withFaceExpressions();
 
 const objRus={
     angry:'angry',
@@ -55,7 +54,8 @@ const objRus={
     neutral:'neutral',
     sad:'sad',
     surprised:'surprised',
-    bored:'bored'}
+    bored:'bored'
+}
 
     const resizedDetections = faceapi.resizeResults(detections, displaySize);
     console.log(resizedDetections.expressions);
@@ -67,7 +67,6 @@ const objRus={
     if (resizedDetections && Object.keys(resizedDetections).length > 0) {
     const age = resizedDetections.age;
     const interpolatedAge = interpolateAgePredictions(age).toFixed();
-    const gender = resizedDetections.gender;
     const expressions = resizedDetections.expressions;
     const maxValue = Math.max(...Object.values(expressions));
     const emotion = Object.keys(expressions).filter(
@@ -75,7 +74,6 @@ const objRus={
     );
 
     document.getElementById("age").innerText = `Age - ${interpolatedAge} years`;
-    document.getElementById("gender").innerText = `Gender - ${gender==='Female'?'Woman':'Man'}`;
     document.getElementById("emotion").innerText = `Emotion - ${objRus[emotion[0]]}`;
     }
 }, 500);
