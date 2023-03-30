@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    background: rgb(38, 31, 51);
+    width: calc(100% - 33px);
+}
+canvas {
+    position: absolute;
+}
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.result-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.result-container > div {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin: 10px 0;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    background:Transparent no-repeat;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192);
+    border: 1px solid rgba(43, 43, 43, 0.568);
+    backdrop-filter: blur(30%);
+}
+video {
+    width: 100%;
+}
+header {
+    background:rgb(57, 46, 77);
+    color: white;
+    width: 100%;
+    font-size: 2rem;
+    padding: 1rem; 
+    letter-spacing: 1px;
+}
+hr {
+    height: 1px;
+    background-color: #fff;
+    width: 100%;
+    margin: 0px 20px;
+}
